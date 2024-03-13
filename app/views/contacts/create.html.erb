@@ -1,0 +1,10 @@
+<turbo-frame id="tf_contact_form">
+  <% if @contact.errors.any? %>
+    <%= render partial: 'shared/form_error', locals: { form_object: @contact } %>
+
+    <%= render partial: 'shared/contact_form', locals: { contact: @contact } %>
+  <% else %>
+    <%= render partial: 'shared/form_success', locals: { form_object: @contact } %>
+  <% end %>
+</turbo-frame>
+

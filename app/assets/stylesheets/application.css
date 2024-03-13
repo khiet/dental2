@@ -13,3 +13,28 @@
  *= require_tree .
  *= require_self
  */
+
+/* base */
+p {
+  margin-bottom: 1rem;
+}
+
+/* form */
+label {
+  display: block;
+  margin-top: 1rem;
+}
+input[type='text'], input[type='tel'], input[type='email'], input[type='password'], textarea {
+  width: 100%;
+  border-color: #cacaca;
+  border-radius: 0.25rem;
+}
+input[readonly] {
+  background-color: #e6e6e6;
+  cursor: not-allowed;
+}
+select {
+  height: 2.5rem;
+  border-color: #cacaca;
+  border-radius: 0.25rem;
+}

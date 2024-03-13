@@ -1,0 +1,20 @@
+<%= form_with model: contact do |f| %>
+  <%= f.label :name, class: 'required' %>
+  <%= f.text_field :name %>
+  <%= f.label :email, class: 'required' %>
+  <%= f.text_field :email %>
+  <%= f.label :phone, class: 'required' %>
+  <%= f.text_field :phone %>
+  <%= f.label :message, class: 'required' %>
+  <%= f.text_area :message, rows: 6 %>
+  <div class="mt-4">
+    <div class="text-sm italic">
+      By providing this information, I consent to receive emails and/or phone calls from Sunbury Dental Practice. I am aware that I can manage my preferences and opt-out of further communications using the unsubscribe link in all of Sunbury Dental Practice's email communications.
+    </div>
+    <div class="mt-4 checkbox-label-container">
+      <%= f.check_box :consent, id: 'consent' %>
+      <%= f.label :consent, 'Please tick to grant us your consent*', for: 'consent', class: 'm-0' %>
+    </div>
+  </div>
+  <%= f.button 'Submit', class: 'btn-primary mt-4',  data: { turbo_submits_with: "Submitting..." } %>
+<% end %>

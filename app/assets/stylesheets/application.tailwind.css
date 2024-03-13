@@ -2,12 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
-
 @layer components {
   .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+    @apply rounded py-2 px-4 bg-sunbury-dark text-white hover:bg-sunbury-dark-hover;
+  }
+  .btn-qcq {
+    @apply rounded py-2 px-4 bg-purple-600 text-white hover:bg-purple-500;
+  }
+  .txt-heading {
+    @apply text-xl font-bold;
+  }
+  /* form */
+  .checkbox-label-container {
+    @apply flex items-center;
+  }
+  .checkbox-label-container input[type='checkbox'] {
+      @apply mr-2 rounded;
+  }
+  .field_with_errors label {
+    @apply text-red-700;
+  }
+  label.required:after {
+    @apply text-red-700;
+    content: ' *'
+  }
+  .top-nav {
+    @apply flex text-center;
+  }
+  .top-nav a {
+    @apply bg-red-100 grow;
+    @apply font-bold py-2 px-4 text-gray-600 hover:bg-sunbury hover:text-white;
+  }
+  .top-nav .top-nav-focused {
+    @apply bg-sunbury text-white;
+  }
+  .left-menu a {
+    @apply font-bold py-2 px-4 text-gray-600 hover:bg-sunbury-light hover:text-white;
+  }
+  .left-menu .left-menu-focused {
+    @apply bg-sunbury-light text-white;
   }
 }
-
-*/

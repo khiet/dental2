@@ -1,4 +1,57 @@
-<div>
-  <h1 class="font-bold text-4xl">Homes#index</h1>
-  <p>Find me in app/views/homes/index.html.erb</p>
+<%= image_tag "sign_home.png" %>
+<div class="grid grid-cols-7">
+  <div class="bg-red-100">
+    <div class="flex flex-col left-menu js-left-menu">
+      <%= link_to 'Welcome', home_path('index'), class: 'left-menu-focused', data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Private HNS', home_path('private_nhs'), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Emergency', home_path('emergency'), data: { turbo_frame: :tf_content } %>
+    </div>
+  </div>
+  <div class="col-span-4">
+    <h2 class="txt-heading">Welcome to the Sunbury Dental Practice</h2>
+
+    <div class="mt-4">
+      <turbo-frame id="tf_content">
+        <p>Established in 1959, we have grown into the largest practice in the area with an enviable reputation for providing quality care to patients of all ages.</p>
+        <p>The friendly and helpful staff, together with the relaxed environment, will dispel any negative emotions associated with visiting the dentist.</p>
+        <p>We offer early morning, evening and Saturday morning appointments to ensure that you can be seen at a time that suits you. With our weekend and bank holiday cover a dentist can be available, in an emergency, every day of the year.</p>
+        <p>We encourage our younger patients to attend for regular check-ups to ensure good dental hygiene thereby aiming to prevent problems occurring in later life. We also encourage this of our adult patients.</p>
+        <p>If you have a problem or are concerned about a particular aspect of your appearance, our team of dentists, dental specialists and hygienists, with their extensive experience, can ensure that you can receive the best possible advice and treatment.</p>
+      </turbo-frame>
+    </div>
+  </div>
+  <div class="col-span-2 hidden lg:block bg-yellow-100">
+    <%= image_tag "sign_right_home.png", class: "p-2 border border-gray-200 bg-white" %>
+  </div>
+</div>
+
+<div class="grid grid-cols-7">
+  <div class="bg-red-100">
+  </div>
+  <div class="col-span-4">
+    <h4 class="txt-heading">Make an appointment by contacting us today</h4>
+
+    <div class="mt-4">
+      <turbo-frame id="tf_contact_form">
+        <%= render partial: 'shared/contact_form', locals: { contact: @contact } %>
+      </turbo-frame>
+    </div>
+  </div>
+  <div class="col-span-2 bg-yellow-100">
+    <div class='inline-block p-4 border border-gray-200 bg-white'>
+      <%= link_to 'https://www.cqc.org.uk/location/1-1474713274', target: '_blank' do %>
+        <%= image_tag 'qcq_logo.png' %>
+      <% end %>
+      <p class="mt-4">
+      For details of our last CQC inspection
+      </p>
+      <%= link_to 'See CQC registration details', 'https://www.cqc.org.uk/location/1-1474713274', class: 'inline-block mt-4 btn-qcq', target: '_blank' %>
+    </div>
+    <div class='inline-block mt-4 p-4 border border-gray-200 bg-white'>
+      <%= link_to 'https://lead.tabeo.co.uk/sunbury-dental-practice/finance', target: '_blank' do %>
+        <%= image_tag 'interest-free-loan.jpg' %>
+      <% end %>
+      <%= link_to 'See details', 'https://lead.tabeo.co.uk/sunbury-dental-practice/finance', class: 'inline-block mt-4 btn-qcq', target: '_blank' %>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,17 @@
+<% if form_object.errors.any? %>
+  <div class="p-4 rounded border-2 border-red-700 text-red-700">
+    <div class="font-bold">
+      <%= "Please review the following #{'error'.pluralize(form_object.errors.count)}, and try again" %>
+    </div>
+    <div class="mt-4">
+      <ul class="list-none">
+        <% form_object.errors.full_messages.each do |message| %>
+          <li>
+            <i class="fa-solid fa-exclamation-circle"></i>
+              <%= message %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
