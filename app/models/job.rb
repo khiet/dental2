@@ -1,6 +1,4 @@
 class Job < ActiveRecord::Base
-  attr_accessible :title, :category
-
   JOB_CATEGORIES = %w(dentist hygienist nurse manager receptionist treatment-coordinator doctor)
 
   has_many :workers

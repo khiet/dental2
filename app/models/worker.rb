@@ -1,6 +1,4 @@
 class Worker < ActiveRecord::Base
-  attr_accessible :availability, :description, :firstname, :gdc, :job_id, :lastname, :title_id, :qualification, :avatar, :remove_avatar
-
   belongs_to :job
   belongs_to :title
 
@@ -15,7 +13,7 @@ class Worker < ActiveRecord::Base
   scope :receptionists,     -> { joins(:job).where("category = 'receptionist'") }
   scope :doctors,           -> { joins(:job).where("category = 'doctor'") }
 
-  mount_uploader :avatar, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
 
   def name
     "#{title} #{firstname} #{lastname}"
