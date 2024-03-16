@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "https://kit.fontawesome.com/966134bbe7.js", crossorigin: "anonymous" %>
     <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
   <body class="bg-sunbury-light">
