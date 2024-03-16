@@ -2,6 +2,6 @@
   <%= link_to "Home", homes_path, class: add_focused_style_to_top_nav('homes'), data: { turbo: false } %>
   <%= link_to "About Us", '#', class: add_focused_style_to_top_nav(''), data: { turbo: false } %>
   <%= link_to "What We Do", '#', class: add_focused_style_to_top_nav(''), data: { turbo: false } %>
-  <%= link_to "Find Us", '#', class: add_focused_style_to_top_nav(''), data: { turbo: false } %>
+  <%= link_to "Find Us", find_uses_path, class: add_focused_style_to_top_nav('find_uses'), data: { turbo: false } %>
   <%= link_to "Advice", advices_path, class: add_focused_style_to_top_nav('advices'), data: { turbo: false } %>
 </nav>

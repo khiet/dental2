@@ -17,7 +17,8 @@ module.exports = {
       },
       colors: {
         'sunbury': {
-          light: '#9EFADE',
+          lighter: '#cffdef',
+          light: '#9efade',
           DEFAULT: '#25f4b5',
           dark: '#357935',
           'dark-hover': '#5d935d'

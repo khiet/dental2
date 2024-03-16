@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :homes, only: [:index, :show]
   resources :advices, only: [:index, :show]
+  resources :find_uses, only: [:index]
   resources :contacts, only: [:create]
 
   # Defines the root path route ("/")
