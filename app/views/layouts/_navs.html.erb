@@ -1,7 +1,7 @@
-<nav class="top-nav">
-  <%= link_to "Home", homes_path, class: 'top-nav-focused', data: { turbo: false } %>
-  <%= link_to "About Us", '#' %>
-  <%= link_to "What We Do", '#' %>
-  <%= link_to "Find Us", '#' %>
-  <%= link_to "Advice", '#' %>
+<nav class="top-nav js-top-nav">
+  <%= link_to "Home", homes_path, class: add_focused_style_to_top_nav('homes'), data: { turbo: false } %>
+  <%= link_to "About Us", '#', class: add_focused_style_to_top_nav(''), data: { turbo: false } %>
+  <%= link_to "What We Do", '#', class: add_focused_style_to_top_nav(''), data: { turbo: false } %>
+  <%= link_to "Find Us", '#', class: add_focused_style_to_top_nav(''), data: { turbo: false } %>
+  <%= link_to "Advice", advices_path, class: add_focused_style_to_top_nav('advices'), data: { turbo: false } %>
 </nav>

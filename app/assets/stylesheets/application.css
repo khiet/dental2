@@ -14,11 +14,6 @@
  *= require_self
  */
 
-/* base */
-p {
-  margin-bottom: 1rem;
-}
-
 /* form */
 label {
   display: block;
