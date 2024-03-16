@@ -16,6 +16,9 @@
   <body class="bg-sunbury-light">
     <main class="container mx-auto my-8 p-4 bg-white">
       <%= render partial: 'layouts/flash_notice_alert' %>
+      <% unless cookies[:EU_COOKIE_LAW_CONSENT] %>
+        <%= render partial: 'layouts/cookie_privacy_policy' %>
+      <% end %>
       <%= render partial: 'layouts/header' %>
       <%= render partial: 'layouts/promotion', collection: @promotions %>
       <%= render partial: 'layouts/navs' %>
