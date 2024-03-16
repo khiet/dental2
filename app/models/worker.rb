@@ -13,7 +13,7 @@ class Worker < ActiveRecord::Base
   scope :receptionists,     -> { joins(:job).where("category = 'receptionist'") }
   scope :doctors,           -> { joins(:job).where("category = 'doctor'") }
 
-  # mount_uploader :avatar, AvatarUploader
+  mount_uploader :avatar, AvatarUploader
 
   def name
     "#{title} #{firstname} #{lastname}"
