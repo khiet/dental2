@@ -3,7 +3,7 @@
   <div class="bg-red-100">
     <div class="flex flex-col left-menu">
       <ul>
-        <li class="js-product-left-menu left-menu-focused"><%= link_to 'What We Do', product_path('index'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+        <li class="js-product-left-menu left-menu-focused"><%= link_to 'What We Do', products_path, class: 'block', data: { turbo_frame: :tf_content } %></li>
         <li class="js-product-left-menu">
           <%= link_to "Preventative Treatment", product_path('preventative_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
           <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-right">

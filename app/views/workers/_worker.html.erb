@@ -1,0 +1,16 @@
+<div class="relative p-2 bg-sunbury-lighter">
+  <% if worker.avatar? %>
+    <%= image_tag worker.avatar.url, class: 'size-[100px]' %>
+  <% end %>
+  <% if worker.gdc %>
+    <div class="absolute top-0 right-0 pt-2 pr-2 text-sm text-gray-600">GDC Number: <%= worker.gdc %></div>
+  <% end %>
+  <div class="font-bold"><%= worker.name %></div>
+  <% if worker.specialist? %>
+    <div><%= worker.job %></div>
+  <% end %>
+  <div class="mt-2 text-gray-600 text-sm"><%= worker.qualification %></div>
+  <% if worker.specialist? %>
+    <div  class="mt-2 text-gray-600 text-sm"><%= worker.description %></div>
+  <% end %>
+</div>

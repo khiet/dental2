@@ -6,12 +6,12 @@ class Worker < ActiveRecord::Base
 
   default_scope { order("workers.weight ASC") }
 
-  scope :dentists,          -> { joins(:job).where("category = 'dentist'") }
-  scope :hygienists,        -> { joins(:job).where("category = 'hygienist'") }
-  scope :practice_managers, -> { joins(:job).where("category = 'manager' OR category = 'treatment-coordinator'") }
-  scope :nurses,            -> { joins(:job).where("category = 'nurse'") }
-  scope :receptionists,     -> { joins(:job).where("category = 'receptionist'") }
-  scope :doctors,           -> { joins(:job).where("category = 'doctor'") }
+  scope :dentist,          -> { joins(:job).where("category = 'dentist'") }
+  scope :hygienist,        -> { joins(:job).where("category = 'hygienist'") }
+  scope :practice_manager, -> { joins(:job).where("category = 'manager' OR category = 'treatment-coordinator'") }
+  scope :nurse,            -> { joins(:job).where("category = 'nurse'") }
+  scope :receptionist,     -> { joins(:job).where("category = 'receptionist'") }
+  scope :doctor,           -> { joins(:job).where("category = 'doctor'") }
 
   mount_uploader :avatar, AvatarUploader
 
