@@ -1,4 +1,4 @@
-class Promotion < ActiveRecord::Base
+class Promotion < ApplicationRecord
   validates :title, presence: true
 
   scope :active, -> { where active: true }

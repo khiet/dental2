@@ -1,4 +1,4 @@
-class Worker < ActiveRecord::Base
+class Worker < ApplicationRecord
   belongs_to :job
   belongs_to :title
 

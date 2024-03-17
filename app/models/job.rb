@@ -1,4 +1,4 @@
-class Job < ActiveRecord::Base
+class Job < ApplicationRecord
   JOB_CATEGORIES = %w(dentist hygienist nurse manager receptionist treatment-coordinator doctor)
 
   has_many :workers

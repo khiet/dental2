@@ -1,4 +1,4 @@
-class Product < ActiveRecord::Base
+class Product < ApplicationRecord
   validates :name, :price, presence: true
   validates_numericality_of :weight
 
