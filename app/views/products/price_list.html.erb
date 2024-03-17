@@ -3,8 +3,8 @@
   <div class='p-4 bg-sunbury-lighter'>
     <table>
       <tbody>
-        <% ProductCategory.all.each do |category| %>
-          <% category.products.each_with_index do |product, index| %>
+        <% ProductCategory.order(weight: :desc).each do |category| %>
+          <% category.products.order(weight: :desc).each_with_index do |product, index| %>
             <% if index == 0 %>
               <tr><td class="font-bold"><%= category.name %></td><td><%= product.name %></td><td><%= product.price %></td></tr>
             <% else %>

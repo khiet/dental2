@@ -3,6 +3,4 @@ class Product < ApplicationRecord
   validates :weight, numericality: { greater_than_or_equal_to: 0 }
 
   belongs_to :product_category
-
-  default_scope { order('weight DESC') }
 end

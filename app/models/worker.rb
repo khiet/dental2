@@ -4,8 +4,6 @@ class Worker < ApplicationRecord
 
   validates :job_id, :title_id, presence: true
 
-  default_scope { order("workers.weight ASC") }
-
   scope :dentist,          -> { joins(:job).where("category = 'dentist'") }
   scope :hygienist,        -> { joins(:job).where("category = 'hygienist'") }
   scope :practice_manager, -> { joins(:job).where("category = 'manager' OR category = 'treatment-coordinator'") }

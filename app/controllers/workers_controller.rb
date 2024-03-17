@@ -3,7 +3,7 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @workers = Worker.includes(:title, :job).send(params[:id])
+    @workers = Worker.includes(:title, :job).order(:weight).send(params[:id])
 
     render :show
   end
