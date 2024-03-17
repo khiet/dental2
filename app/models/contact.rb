@@ -5,7 +5,7 @@ class Contact
 
   validates :name, :email, :phone, :message, :consent, presence: true
   validate :consent_is_checked
-  # TODO: validates :contact_email, format: { with: Devise.email_regexp }
+  validates :email, format: { with: Devise.email_regexp }
 
   private
 
