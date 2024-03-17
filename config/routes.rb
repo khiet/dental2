@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :homes, path: 'home', only: [:index, :show]
   resources :advices, path: 'advice', only: [:index, :show]
   resources :directions, path: 'find_us', only: [:index]
+  resources :products, path: 'what_we_do', only: [:index, :show]
   resources :contacts, only: [:create]
 
   # Defines the root path route ("/")

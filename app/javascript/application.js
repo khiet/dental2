@@ -9,12 +9,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
   Array.prototype.forEach.call(leftMenuLinks, (leftMenuLink) => {
     leftMenuLink.addEventListener('click', (e) => {
-      console.log(e.currentTarget);
       Array.prototype.forEach.call(leftMenuLinks, (leftMenuLink) => {
         leftMenuLink.classList.remove('left-menu-focused');
       });
 
       e.currentTarget.classList.add('left-menu-focused');
+    });
+  });
+
+  const productLeftMenuLinks = document.querySelectorAll(
+    '.js-product-left-menu',
+  );
+  const productLeftMenuSublistLinks = document.querySelectorAll(
+    '.js-product-left-menu-sublist',
+  );
+
+  Array.prototype.forEach.call(productLeftMenuLinks, (productLeftMenuLink) => {
+    productLeftMenuLink.addEventListener('click', (e) => {
+      Array.prototype.forEach.call(productLeftMenuLinks, (productLeftMenuLink) => {
+        productLeftMenuLink.classList.remove('left-menu-focused');
+      });
+
+      Array.prototype.forEach.call(productLeftMenuSublistLinks, (productLeftMenuSublistLink) => {
+        productLeftMenuSublistLink.classList.add('hidden');
+      });
+
+      const leftmenu = e.currentTarget;
+      const leftMenuSublist = leftmenu.querySelector('.js-product-left-menu-sublist');
+
+      leftmenu.classList.add('left-menu-focused');
+      if (leftMenuSublist) {
+        leftMenuSublist.classList.remove('hidden');
+      }
     });
   });
 

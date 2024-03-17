@@ -57,4 +57,14 @@
   .left-menu .left-menu-focused {
     @apply bg-sunbury-light text-white;
   }
+  li.left-menu-focused a {
+    @apply text-white;
+  }
+  ul.product-left-menu-sublist a {
+    @apply bg-white text-gray-600 hover:bg-white hover:text-gray-600;
+    @apply hover:product-left-menu-sublist-a-border;
+  }
+  .product-left-menu-sublist-a-border {
+    @apply border-b-4 border-sunbury-light;
+  }
 }

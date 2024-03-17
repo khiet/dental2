@@ -1,0 +1,65 @@
+<%= image_tag "sign_product.png" %>
+<div class="grid grid-cols-7">
+  <div class="bg-red-100">
+    <div class="flex flex-col left-menu">
+      <ul>
+        <li class="js-product-left-menu left-menu-focused"><%= link_to 'What We Do', product_path('index'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+        <li class="js-product-left-menu">
+          <%= link_to "Preventative Treatment", product_path('preventative_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
+          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-right">
+            <li><%= link_to "Examination", product_path('examination'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "X-Rays", product_path('x_ray'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Treatment Planning", product_path('treatment_planning'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Fillings", product_path('filling'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Gold Fillings", product_path('gold_filling'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+          </ul>
+        </li>
+        <li class="js-product-left-menu">
+          <%= link_to "Cosmetic Treatment", product_path('cosmetic_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
+          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-right">
+            <li><%= link_to "White fillings", product_path('white_filling'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Tooth whitening", product_path('tooth_whitening'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Veneers", product_path('veneer'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Crowns & Bridges", product_path('crown_bridge'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Invisalign", product_path('invisalign'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+          </ul>
+        </li>
+        <li class="js-product-left-menu">
+          <%= link_to "Gum Treatment", product_path('gum_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
+          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-right">
+            <li><%= link_to "Hygiene", product_path('hygiene'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Periodontal", product_path('periodontal'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+          </ul>
+        </li>
+        <li class="js-product-left-menu">
+          <%= link_to "Other Treatment", product_path('other_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
+          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-right">
+            <li><%= link_to "Root Treatment", product_path('root_treatment'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Extractions", product_path('extraction'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Dentures", product_path('denture'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Implants", product_path('implant'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+            <li><%= link_to "Orthodontics", product_path('orthodonic'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+          </ul>
+        </li>
+        <li class="js-product-left-menu"><%= link_to "Price List", product_path('price_list'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-span-4 p-4">
+    <h2>Quality Guaranteed</h2>
+
+    <div class="mt-4 content">
+      <turbo-frame id="tf_content">
+        <h4>What We Do</h4>
+        <p>We constantly strive to bring you the best quality treatment and care, from our carefully thought out reception area, our modern state-of-the-art surgeries and the high quality of materials and laboratories that we chose to provide for you. All members of our team are actively attending courses, both clinical & administrative and as a team we are very proactive in making sure that your experience is a good one.</p>
+
+        <p>We are here to help and re-assure you and to answer any questions you may have regarding your dental care, including facial aesthetics and cosmetic treatment.</p>
+
+        <p>We are fully compliant with Department of Health (DoH) regulation HTM01-05 and registered with government's Care Quality Commission (CQC) ensuring the highest standards of cross infection control and the use of disposable items wherever possible.</p>
+      </turbo-frame>
+    </div>
+  </div>
+  <div class="col-span-2 hidden lg:block bg-yellow-100">
+    <%= image_tag "sign_right_product.png", class: "p-2 border border-gray-200 bg-white" %>
+  </div>
+</div>
