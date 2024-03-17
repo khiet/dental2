@@ -1,0 +1,53 @@
+<%= image_tag "sign_home.png", class: 'min-w-full' %>
+<div class="grid grid-cols-7">
+  <div class="bg-red-100">
+    <div class="flex flex-col left-menu js-left-menu">
+      <%= link_to 'Welcome', home_path('welcome'), class: add_focused_style_to_left_menu('welcome', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Private HNS', home_path('private_nhs'), class: add_focused_style_to_left_menu('private_nhs', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Emergency', home_path('emergency'), class: add_focused_style_to_left_menu('emergency', @partial), data: { turbo_frame: :tf_content } %>
+    </div>
+  </div>
+  <div class="col-span-4 p-4">
+    <h2>Welcome to the Sunbury Dental Practice</h2>
+
+    <div class="mt-4 content">
+      <turbo-frame id="tf_content">
+        <%= render partial: @partial %>
+      </turbo-frame>
+    </div>
+  </div>
+  <div class="col-span-2 hidden lg:block bg-yellow-100">
+    <%= image_tag "sign_right_home.png", class: "p-2 border border-gray-200 bg-white" %>
+  </div>
+</div>
+
+<div class="grid grid-cols-7">
+  <div class="bg-red-100">
+  </div>
+  <div class="col-span-4 p-4">
+    <h4>Make an appointment by contacting us today</h4>
+
+    <div class="mt-4">
+      <turbo-frame id="tf_contact_form">
+        <%= render partial: 'shared/contact_form', locals: { contact: @contact } %>
+      </turbo-frame>
+    </div>
+  </div>
+  <div class="col-span-2 bg-yellow-100">
+    <div class='inline-block p-4 border border-gray-200 bg-white'>
+      <%= link_to 'https://www.cqc.org.uk/location/1-1474713274', target: '_blank' do %>
+        <%= image_tag 'qcq_logo.png' %>
+      <% end %>
+      <p class="mt-4">
+      For details of our last CQC inspection
+      </p>
+      <%= link_to 'See CQC registration details', 'https://www.cqc.org.uk/location/1-1474713274', class: 'inline-block mt-4 btn-qcq', target: '_blank' %>
+    </div>
+    <div class='inline-block mt-4 p-4 border border-gray-200 bg-white'>
+      <%= link_to 'https://lead.tabeo.co.uk/sunbury-dental-practice/finance', target: '_blank' do %>
+        <%= image_tag 'interest-free-loan.jpg' %>
+      <% end %>
+      <%= link_to 'See details', 'https://lead.tabeo.co.uk/sunbury-dental-practice/finance', class: 'inline-block mt-4 btn-qcq', target: '_blank' %>
+    </div>
+  </div>
+</div>

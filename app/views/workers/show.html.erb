@@ -1,5 +1,26 @@
-<turbo-frame id="tf_content">
-  <div class="space-y-1">
-    <%= render partial: "worker", collection: @workers %>
+<%= image_tag "sign_worker.png", class: 'min-w-full' %>
+<div class="grid grid-cols-7">
+  <div class="bg-red-100">
+    <div class="flex flex-col left-menu js-left-menu">
+      <%= link_to 'About Us', workers_path, class: add_focused_style_to_left_menu('about_us', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Practice Managers', worker_path('practice_manager'), class: add_focused_style_to_left_menu('practice_manager', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Dentists', worker_path('dentist'), class: add_focused_style_to_left_menu('dentist', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Hygienists', worker_path('hygienist'), class: add_focused_style_to_left_menu('hygienist', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Nurses', worker_path('nurse'), class: add_focused_style_to_left_menu('nurse', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Doctors', worker_path('doctor'), class: add_focused_style_to_left_menu('doctor', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Receptionists', worker_path('receptionist'), class: add_focused_style_to_left_menu('receptionist', @partial), data: { turbo_frame: :tf_content } %>
+    </div>
   </div>
-</turbo-frame>
+  <div class="col-span-4 p-4">
+    <h2>The Sunbury Dental Team</h2>
+
+    <div class="mt-4 content">
+      <turbo-frame id="tf_content">
+        <%= render partial: @partial %>
+      </turbo-frame>
+    </div>
+  </div>
+  <div class="col-span-2 hidden lg:block bg-yellow-100">
+    <%= image_tag "sign_right_worker.png", class: "p-2 border border-gray-200 bg-white" %>
+  </div>
+</div>

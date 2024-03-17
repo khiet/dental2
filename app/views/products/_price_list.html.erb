@@ -1,0 +1,22 @@
+<h4>Price List</h4>
+<div class='p-4 bg-sunbury-lighter'>
+  <table>
+    <tbody>
+      <% ProductCategory.order(weight: :desc).each do |category| %>
+        <% category.products.order(weight: :desc).each_with_index do |product, index| %>
+          <% if index == 0 %>
+            <tr><td class="font-bold"><%= category.name %></td><td><%= product.name %></td><td><%= product.price %></td></tr>
+          <% else %>
+            <tr><td></td><td><%= product.name %></td><td><%= product.price %></td></tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<hr class="my-4">
+<div class="text-sm">
+  <p>Please note: This is intended as a guide only and your dentist will give you a detailed estimate of treatment costs.</p>
+  <p>Our fees reflect the high quality of the services offered and include the best materials and latest technology.</p>
+  <p>We are fully compliant with Department of Health (DoH) regulation HTM01-05 and registered with government's Care Quality Commission (CQC) ensuring the highest standards of cross infection control and the use of disposable items wherever possible.</p>
+</div>

@@ -1,9 +1,6 @@
 class HomesController < ApplicationController
-  def index
-    @contact = Contact.new
-  end
-
   def show
-    render params[:id]
+    @contact = Contact.new
+    @partial = params[:id] || 'welcome'
   end
 end

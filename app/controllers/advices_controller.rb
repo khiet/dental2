@@ -1,8 +1,10 @@
 class AdvicesController < ApplicationController
   def index
+    @partial = 'advice'
+    render :show
   end
 
   def show
-    render params[:id]
+    @partial = params[:id]
   end
 end
