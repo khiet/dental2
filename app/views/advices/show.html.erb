@@ -1,7 +1,7 @@
 <%= image_tag "sign_advice.png", class: 'min-w-full' %>
 <div class="grid grid-cols-7">
   <div class="bg-red-100">
-    <div class="flex flex-col left-menu js-left-menu">
+    <div class="flex flex-col left-menu" data-controller="left-menu">
       <%= link_to 'Advice', advices_path, class: add_focused_style_to_left_menu('advice', @partial), data: { turbo_frame: :tf_content } %>
       <%= link_to 'Medical History', advice_path('medical_history'), class: add_focused_style_to_left_menu('medical_history', @partial), data: { turbo_frame: :tf_content } %>
       <%= link_to 'Brushing', advice_path('brushing'), class: add_focused_style_to_left_menu('brushing', @partial), data: { turbo_frame: :tf_content } %>

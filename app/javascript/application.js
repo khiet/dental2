@@ -3,20 +3,6 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 document.addEventListener('DOMContentLoaded', () => {
-  const leftMenuLinks = document.querySelectorAll(
-    '.js-left-menu a',
-  );
-
-  Array.prototype.forEach.call(leftMenuLinks, (leftMenuLink) => {
-    leftMenuLink.addEventListener('click', (e) => {
-      Array.prototype.forEach.call(leftMenuLinks, (leftMenuLink) => {
-        leftMenuLink.classList.remove('left-menu-focused');
-      });
-
-      e.currentTarget.classList.add('left-menu-focused');
-    });
-  });
-
   const productLeftMenuLinks = document.querySelectorAll(
     '.js-product-left-menu',
   );
