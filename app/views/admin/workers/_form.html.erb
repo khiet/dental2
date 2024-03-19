@@ -1,0 +1,63 @@
+<%= form_for [:admin, @worker], html: {multipart: true} do |f| %>
+  <% if @worker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+
+      <ul>
+        <% @worker.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :job %>
+    <%= f.collection_select :job_id, Job.all, :id, :title %>
+  </div>
+  <div>
+    <%= f.label :title %>
+    <%= f.collection_select :title_id, Title.all, :id, :title %>
+  </div>
+  <div>
+    <%= f.label :firstname %>
+    <%= f.text_field :firstname %>
+  </div>
+  <div>
+    <%= f.label :lastname %>
+    <%= f.text_field :lastname %>
+  </div>
+  <div>
+    <%= f.label :gdc %>
+    <%= f.text_field :gdc %>
+  </div>
+  <div>
+    <%= f.label :availability %>
+    <%= f.text_field :availability %>
+  </div>
+  <div>
+    <%= f.label :qualification %>
+    <%= f.text_field :qualification %>
+  </div>
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+  <div>
+    <%= image_tag(@worker.avatar_url) if @worker.avatar? %>
+    <%= f.file_field :avatar %>
+  </div>
+  <div>
+    <% if @worker.avatar? %>
+      <%= f.label :remove_avatar %>
+      <%= f.check_box :remove_avatar %>
+    <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

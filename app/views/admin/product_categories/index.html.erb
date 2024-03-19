@@ -1,0 +1,23 @@
+<h4>Product categories</h4>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+  </tr>
+
+  <% @product_categories.each do |product_category| %>
+    <tr>
+    <td><%= product_category.name %></td>
+    <td><%= product_category.weight %></td>
+    <td><%= link_to 'Show', admin_product_category_path(product_category) %> | <%= link_to 'Edit', edit_admin_product_category_path(product_category) %> | <%= link_to 'Delete', admin_product_category_path(product_category), confirm: "Are you sure?\n\nThis will delete all the associated products:\n#{product_category.products.map(&:name).join(', ')}.", method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div>
+  <%= link_to 'Add new product category', new_admin_product_category_path %>
+</div>
+<div>
+  <%= link_to 'Manage Products', admin_products_path, class: 'manage' %>
+</div>

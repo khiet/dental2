@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<%= render partial: 'shared/promotion', locals: { promotion: @promotion } %>
+
+<%= link_to 'Edit', edit_admin_promotion_path(@promotion) %> |
+<%= link_to 'Back', admin_promotions_path %>

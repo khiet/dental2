@@ -1,0 +1,25 @@
+<h4>Products</h4>
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Weight</th>
+  </tr>
+
+  <% @products.each do |product| %>
+    <tr>
+    <td><%= product.product_category.name %></td>
+    <td><%= product.name %></td>
+    <td><%= product.price %></td>
+    <td><%= product.weight %></td>
+    <td><%= link_to 'Show', admin_product_path(product) %> | <%= link_to 'Edit', edit_admin_product_path(product) %> | <%= link_to 'Delete', admin_product_path(product), confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Add new product', new_admin_product_path %>
+<div>
+  <%= link_to 'Manage Product Categories', admin_product_categories_path, class: 'manage' %>
+</div>

@@ -1,0 +1,10 @@
+module Admin
+  class AdminsController < ApplicationController
+
+    before_filter :authenticate_user!
+
+    def index
+    end
+
+  end
+end

@@ -1,0 +1,16 @@
+<h1>Listing workers</h1>
+
+<table>
+  <% @workers.each do |worker| %>
+    <tr>
+      <td><%= worker.name %></td>
+      <td><%= link_to 'Show', admin_worker_path(worker) %></td>
+      <td><%= link_to 'Edit', edit_admin_worker_path(worker) %></td>
+      <td><%= link_to 'Destroy', admin_worker_path(worker), confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add new Worker', new_admin_worker_path %>

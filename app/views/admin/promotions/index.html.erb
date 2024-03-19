@@ -1,0 +1,17 @@
+<h1>Listing promotions</h1>
+
+<table>
+  <% @promotions.each do |promotion| %>
+    <tr>
+      <td><%= promotion.title %></td>
+      <td><%= promotion.active %></td>
+      <td><%= link_to 'Show', admin_promotion_path(promotion) %></td>
+      <td><%= link_to 'Edit', edit_admin_promotion_path(promotion) %></td>
+      <td><%= link_to 'Destroy', admin_promotion_path(promotion), confirm: 'Are you sure?', method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add new promotion', new_admin_promotion_path %>

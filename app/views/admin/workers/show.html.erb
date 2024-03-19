@@ -1,0 +1,6 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => "about_us/person_card", :locals => { person: @worker } %>
+
+<%= link_to 'Edit', edit_admin_worker_path(@worker) %> |
+<%= link_to 'Back', admin_workers_path %>

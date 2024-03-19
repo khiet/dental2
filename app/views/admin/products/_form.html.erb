@@ -1,0 +1,35 @@
+<%= form_for([:admin, @product]) do |f| %>
+  <% if @product.errors.any? %>
+    <div id="error_explanation">
+      <h5><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h5>
+      <ul>
+        <% @product.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <div>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </div>
+
+  <div>
+    <%= f.label :product_category_id, "Category" %>
+    <%= f.select(:product_category_id, options_for_select(ProductCategory.all.map { |c| [c.name, c.id]}, @product.product_category_id)) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
