@@ -1,0 +1,18 @@
+<div class="my-4">
+  <%= link_to('Log out', destroy_user_session_path, class: 'font-bold underline', data: { turbo_method: :delete }) %>
+</div>
+
+<ul class="list-disc ml-8">
+  <li>
+    <%= link_to 'Manage Products', admin_products_path, class: 'manage' %>
+  </li>
+  <li>
+    <%= link_to 'Manage Product Categories', admin_product_categories_path, class: 'manage' %>
+  </li>
+  <li>
+    <%= link_to 'Manage Workers', admin_workers_path, class: 'manage' %>
+  </li>
+  <li>
+    <%= link_to 'Manage Promotions', admin_promotions_path, class: 'manage' %>
+  </li>
+</ul>

@@ -1,6 +1,27 @@
-<p id="notice"><%= notice %></p>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>GDC</th>
+    <th>Job</th>
+    <th>Description</th>
+    <th>Qualification</th>
+    <th>Weight</th>
+    <th>Avatar</th>
+    <th></th>
+  </tr>
 
-<%= render :partial => "about_us/person_card", :locals => { person: @worker } %>
-
-<%= link_to 'Edit', edit_admin_worker_path(@worker) %> |
-<%= link_to 'Back', admin_workers_path %>
+  <tr>
+    <td><%= @worker.title %></td>
+    <td><%= @worker.firstname %></td>
+    <td><%= @worker.lastname %></td>
+    <td><%= @worker.gdc %></td>
+    <td><%= @worker.job %></td>
+    <td><%= @worker.description %></td>
+    <td><%= @worker.qualification %></td>
+    <td><%= @worker.weight %></td>
+    <td><%= image_tag(@worker.avatar_url) if @worker.avatar? %></td>
+    <td><%= link_to 'Edit', edit_admin_worker_path(@worker) %> | <%= link_to 'Back', admin_workers_path %></td>
+  </tr>
+</table>

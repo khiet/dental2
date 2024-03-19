@@ -1,14 +1,6 @@
-<%= form_for [:admin, @promotion], html: {multipart: true} do |f| %>
+<%= form_for([:admin, @promotion], html: {multipart: true}, data: { turbo: false }) do |f| %>
   <% if @promotion.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@promotion.errors.count, "error") %> prohibited this promotion from being saved:</h2>
-
-      <ul>
-      <% @promotion.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+    <%= render partial: 'shared/form_error', locals: { form_object: @promotion } %>
   <% end %>
 
   <div>
@@ -19,12 +11,12 @@
     <%= f.label :active %>
     <%= f.check_box :active %>
   </div>
-  <div>
+  <div class="mt-4">
     <%= image_tag(@promotion.document_url) if @promotion.document? %>
     <%= f.file_field :document %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div>
+    <%= f.submit 'Submit', class: 'btn-primary my-4' %>
   </div>
 <% end %>

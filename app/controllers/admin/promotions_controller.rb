@@ -22,12 +22,12 @@ module Admin
 
     # POST /promotions
     def create
-      @promotion = Promotion.new(params[:promotion])
+      @promotion = Promotion.new(promotion_params)
 
       if @promotion.save
         redirect_to admin_promotion_path(@promotion), notice: 'Promotion was successfully created.'
       else
-        render action: "new"
+        render action: 'new'
       end
     end
 
@@ -35,10 +35,10 @@ module Admin
     def update
       @promotion = Promotion.find(params[:id])
 
-      if @promotion.update_attributes(params[:promotion])
+      if @promotion.update(promotion_params)
         redirect_to admin_promotion_path(@promotion), notice: 'Promotion was successfully updated.'
       else
-        render action: "edit"
+        render action: 'edit'
       end
     end
 
@@ -48,6 +48,12 @@ module Admin
       @promotion.destroy
 
       redirect_to admin_promotions_url
+    end
+
+    private
+
+    def promotion_params
+      params.require(:promotion).permit!
     end
   end
 end

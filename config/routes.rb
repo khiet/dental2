@@ -14,6 +14,14 @@ Rails.application.routes.draw do
   resources :legals, path: 'legal', only: [:show]
   resources :contacts, only: [:create]
 
+  resources :admins, path: 'admin', only: [:index]
+  namespace :admin do
+    resources :workers
+    resources :products
+    resources :product_categories
+    resources :promotions
+  end
+
   # Defines the root path route ("/")
   root "homes#show"
 end

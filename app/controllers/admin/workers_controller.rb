@@ -27,7 +27,7 @@ module Admin
       if @worker.save
         redirect_to admin_worker_path(@worker), notice: 'Worker was successfully created.'
       else
-        render action: "new"
+        render action: 'new'
       end
     end
 
@@ -35,10 +35,10 @@ module Admin
     def update
       @worker = Worker.find(params[:id])
 
-      if @worker.update_attributes(worker_params)
+      if @worker.update(worker_params)
         redirect_to admin_worker_path(@worker), notice: 'Worker was successfully updated.'
       else
-        render action: "edit"
+        render action: 'edit'
       end
     end
 
@@ -53,7 +53,7 @@ module Admin
     private
 
     def worker_params
-      params[:worker].delete_if { |k, v| v.blank? }
+      params.require(:worker).permit!
     end
   end
 end

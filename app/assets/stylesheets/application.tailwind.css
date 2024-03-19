@@ -18,6 +18,9 @@
   h4 {
     @apply text-lg;
   }
+  a {
+    @apply text-sunbury-dark;
+  }
 }
 
 @layer components {

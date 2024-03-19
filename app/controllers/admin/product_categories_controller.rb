@@ -23,7 +23,7 @@ module Admin
 
     # POST /product_categories
     def create
-      @product_category = ProductCategory.new(params[:product_category])
+      @product_category = ProductCategory.new(product_category_params)
 
       if @product_category.save
         redirect_to admin_product_categories_path(@product_category), notice: 'Product category was successfully created.'
@@ -36,7 +36,7 @@ module Admin
     def update
       @product_category = ProductCategory.find(params[:id])
 
-      if @product_category.update_attributes(params[:product_category])
+      if @product_category.update(product_category_params)
         redirect_to admin_product_categories_path(@product_category), notice: 'Product category was successfully updated.'
       else
         render action: "edit"
@@ -49,6 +49,12 @@ module Admin
       @product_category.destroy
 
       redirect_to admin_product_categories_url
+    end
+
+    private
+
+    def product_category_params
+      params.require(:product_category).permit!
     end
   end
 end

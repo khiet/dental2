@@ -1,13 +1,17 @@
-<h1>Listing promotions</h1>
+<h4>Promotions</h4>
 
 <table>
+  <tr>
+    <th>Title</th>
+    <th>Active</th>
+    <th></th>
+  </tr>
+
   <% @promotions.each do |promotion| %>
     <tr>
       <td><%= promotion.title %></td>
       <td><%= promotion.active %></td>
-      <td><%= link_to 'Show', admin_promotion_path(promotion) %></td>
-      <td><%= link_to 'Edit', edit_admin_promotion_path(promotion) %></td>
-      <td><%= link_to 'Destroy', admin_promotion_path(promotion), confirm: 'Are you sure?', method: :delete %></td>
+      <td><%= link_to 'Show', admin_promotion_path(promotion) %> | <%= link_to 'Edit', edit_admin_promotion_path(promotion) %> | <%= link_to 'Destroy', admin_promotion_path(promotion), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
     </tr>
   <% end %>
 </table>

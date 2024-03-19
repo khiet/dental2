@@ -1,16 +1,23 @@
-<h1>Listing workers</h1>
+<h4>Workers</h4>
 
 <table>
+  <tr>
+    <th>Title</th>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th></th>
+  </tr>
+
   <% @workers.each do |worker| %>
     <tr>
-      <td><%= worker.name %></td>
-      <td><%= link_to 'Show', admin_worker_path(worker) %></td>
-      <td><%= link_to 'Edit', edit_admin_worker_path(worker) %></td>
-      <td><%= link_to 'Destroy', admin_worker_path(worker), confirm: 'Are you sure?', method: :delete %></td>
+      <td><%= worker.title %></td>
+      <td><%= worker.firstname %></td>
+      <td><%= worker.lastname %></td>
+      <td><%= link_to 'Show', admin_worker_path(worker) %> | <%= link_to 'Edit', edit_admin_worker_path(worker) %> | <%= link_to 'Destroy', admin_worker_path(worker), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %></td>
     </tr>
   <% end %>
 </table>
 
-<br />
-
-<%= link_to 'Add new Worker', new_admin_worker_path %>
+<div class='mt-4'>
+  <%= link_to 'Add new worker', new_admin_worker_path %>
+</div>

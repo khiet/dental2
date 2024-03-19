@@ -23,7 +23,7 @@ module Admin
 
     # POST /products
     def create
-      @product = Product.new(params[:product])
+      @product = Product.new(product_params)
 
       if @product.save
         redirect_to admin_product_path(@product), notice: 'Product was successfully created.'
@@ -35,7 +35,7 @@ module Admin
     # PUT /products/1
     def update
       @product = Product.find(params[:id])
-      if @product.update_attributes(params[:product])
+      if @product.update(product_params)
         redirect_to admin_product_path(@product), notice: 'Product was successfully updated.'
       else
         render action: "edit"
@@ -48,6 +48,12 @@ module Admin
       @product.destroy
 
       redirect_to admin_products_url
+    end
+
+    private
+
+    def product_params
+      params.require(:product).permit!
     end
   end
 end
