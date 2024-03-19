@@ -1,0 +1,11 @@
+service: dental-kamal
+
+image: khiet/dental-kamal
+
+registry:
+  username: khiet
+  password:
+    - KAMAL_REGISTRY_PASSWORD
+
+ssh:
+  user: ec2-user
