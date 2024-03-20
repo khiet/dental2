@@ -1,6 +1,6 @@
 <div class='bg-sunbury-lighter font-bold text-sunbury-dark text-center py-2'>
   <% if promotion.document? %>
-    <%= link_to promotion.title, promotion.document.url, target: '_blank' %>
+    <%= link_to promotion.title, promotion.document_url, target: '_blank' %>
   <% else %>
     <%= promotion.title %>
   <%end %>

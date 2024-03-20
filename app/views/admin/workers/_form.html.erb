@@ -40,7 +40,7 @@
     <%= f.text_field :weight %>
   </div>
   <div class="mt-4">
-    <%= image_tag(@worker.avatar_url) if @worker.avatar? %>
+    <%= image_tag(@worker.avatar_url, class: 'w-32') if @worker.avatar? %>
     <%= f.file_field :avatar %>
   </div>
   <div>

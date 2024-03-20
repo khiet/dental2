@@ -12,7 +12,7 @@
     <%= f.check_box :active %>
   </div>
   <div class="mt-4">
-    <%= image_tag(@promotion.document_url) if @promotion.document? %>
+    <%= link_to('Link', @promotion.document_url, target: '_blank') if @promotion.document? %>
     <%= f.file_field :document %>
   </div>
 

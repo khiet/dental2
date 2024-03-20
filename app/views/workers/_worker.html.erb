@@ -1,6 +1,6 @@
 <div class="relative p-2 bg-sunbury-lighter">
   <% if worker.avatar? %>
-    <%= image_tag worker.avatar.url, class: 'size-[100px]' %>
+    <%= image_tag worker.avatar_url, class: 'w-32' %>
   <% end %>
   <% if worker.gdc %>
     <div class="absolute top-0 right-0 pt-2 pr-2 text-sm text-gray-600">GDC Number: <%= worker.gdc %></div>

@@ -9,7 +9,7 @@
   <tr>
     <td><%= @promotion.title %></td>
     <td><%= @promotion.active %></td>
-    <td><%= image_tag(@promotion.document_url) if @promotion.document? %></td>
+    <td><%= link_to('Link', @promotion.document_url, target: '_blank') if @promotion.document? %></td>
     <td><%= link_to 'Edit', edit_admin_promotion_path(@promotion) %> | <%= link_to 'Back', admin_promotions_path %></td>
   </tr>
 </table>
