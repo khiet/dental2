@@ -3,7 +3,12 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_param)
 
     if @contact.valid?
-      # ContactService.send_email_to_sunbury(@contact)
+      ContactsMailer.with(
+        name: @contact.name,
+        email: @contact.email,
+        phone: @contact.phone,
+        message: @contact.message
+      ).form_submission.deliver_now
     end
 
     render
