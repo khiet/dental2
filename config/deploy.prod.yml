@@ -6,7 +6,7 @@ servers:
   web:
     hosts:
       # dental-kamal-web-prod
-      - 18.130.39.133
+      - 35.177.83.80
     cmd:
       bash -c "bin/rails s -p 3000 -b 0.0.0.0"
 
@@ -14,7 +14,7 @@ accessories:
   redis:
     image: redis:latest
     # dental-kamal-web-prod
-    host: 18.130.39.133
+    host: 35.177.83.80
     port: 6379
     cmd: "redis-server --requirepass <%= Dotenv.parse('.env.prod').fetch('REDIS_URL').match(/\/\/:(.*)@/)[1] %>"
     directories:
