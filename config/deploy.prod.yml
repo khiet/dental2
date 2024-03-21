@@ -1,6 +1,5 @@
 volumes:
   - /home/ec2-user/public/uploads:/rails/public/uploads
-  - /home/ec2-user/public/assets:/rails/public/assets
 
 servers:
   web:
@@ -30,7 +29,6 @@ env:
     - DATABASE_URL
     - REDIS_URL
 
-# http://18.175.25.24:8080
 traefik:
   options:
     publish:
