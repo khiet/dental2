@@ -45,10 +45,10 @@
     content: ' *'
   }
   .top-nav {
-    @apply flex text-center;
+    @apply flex text-center flex-col lg:flex-row;
   }
   .top-nav a {
-    @apply bg-red-100 grow;
+    @apply grow;
     @apply font-bold py-2 px-4 text-gray-600 hover:bg-sunbury hover:text-white;
   }
   .top-nav .top-nav-focused {

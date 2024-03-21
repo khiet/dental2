@@ -1,7 +1,7 @@
 <%= image_tag "sign_worker.png", class: 'min-w-full' %>
-<div class="grid grid-cols-7">
+<div class="lg:grid lg:grid-cols-7">
   <div class="bg-red-100">
-    <div class="flex flex-col left-menu" data-controller="left-menu">
+    <div class="flex flex-col left-menu text-center lg:text-left" data-controller="left-menu">
       <%= link_to 'About Us', workers_path, class: add_focused_style_to_left_menu('about_us', @partial), data: { turbo_frame: :tf_content } %>
       <%= link_to 'Practice Managers', worker_path('practice_manager'), class: add_focused_style_to_left_menu('practice_manager', @partial), data: { turbo_frame: :tf_content } %>
       <%= link_to 'Dentists', worker_path('dentist'), class: add_focused_style_to_left_menu('dentist', @partial), data: { turbo_frame: :tf_content } %>

@@ -1,8 +1,8 @@
-<div class="flex justify-between">
-  <%= link_to root_path, data: { turbo: false } do %>
+<div class="flex justify-center lg:justify-between flex-col lg:flex-row">
+  <%= link_to root_path, data: { turbo: false }, class: 'm-auto lg:m-0' do %>
     <%= image_tag "logo.png" %>
   <% end %>
-  <div class="text-right">
+  <div class="text-center mt-4 lg:mt-0 lg:text-right">
     <h2>01932 783 208</h3>
     <h3 class="text-sunbury-dark"><%= mail_to 'reception@sunburydental.co.uk', 'reception@sunburydental.co.uk' %></h3>
   </div>
