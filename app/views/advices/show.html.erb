@@ -1,6 +1,6 @@
 <%= image_tag "sign_advice.png", class: 'min-w-full' %>
 <div class="lg:grid lg:grid-cols-7">
-  <div class="bg-red-100">
+  <div>
     <div class="flex flex-col left-menu text-center lg:text-left" data-controller="left-menu">
       <%= link_to 'Advice', advices_path, class: add_focused_style_to_left_menu('advice', @partial), data: { turbo_frame: :tf_content } %>
       <%= link_to 'Medical History', advice_path('medical_history'), class: add_focused_style_to_left_menu('medical_history', @partial), data: { turbo_frame: :tf_content } %>
@@ -19,7 +19,7 @@
       </turbo-frame>
     </div>
   </div>
-  <div class="col-span-2 hidden lg:block bg-yellow-100">
+  <div class="col-span-2 hidden lg:block">
     <%= image_tag "sign_right_advice.png", class: "p-2 border border-gray-200 bg-white" %>
   </div>
 </div>
