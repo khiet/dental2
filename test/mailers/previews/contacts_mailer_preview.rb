@@ -2,10 +2,7 @@
 class ContactsMailerPreview < ActionMailer::Preview
   def form_submission
     ContactsMailer.with(
-      name: 'Foo',
-      email: 'foo@bar.com',
-      phone: '+447811111111',
-      message: 'Hello World!'
+      contact: contact
     ).form_submission
   end
 

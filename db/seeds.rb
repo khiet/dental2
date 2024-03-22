@@ -324,4 +324,10 @@ Promotion.create(title: '50% Off New Patient Exams at Sunbury Dental Practice', 
 Promotion.create(title: 'COVID-19 PRACTICE INFORMATION (Practice Operating Hours - Click Here for Details)',
                  active: true)
 
+progress 'Creating contacts'
+Contact.create(contact: 'Foo',
+               email: 'foo@bar.com',
+               phone: '+447811111111',
+               message: 'Hello World!')
+
 progress 'DONE'

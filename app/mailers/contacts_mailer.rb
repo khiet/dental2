@@ -1,11 +1,7 @@
 class ContactsMailer < ApplicationMailer
-
   def form_submission
-    @name    = params[:name]
-    @email   = params[:email]
-    @phone   = params[:phone]
-    @message = params[:message]
+    @contact = params[:contact]
 
-    mail(subject: "✉️  #{@name} contacted us ✉️ ")
+    mail(subject: "✉️  #{@contact.email} contacted us ✉️ ")
   end
 end

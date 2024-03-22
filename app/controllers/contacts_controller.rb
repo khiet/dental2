@@ -2,12 +2,9 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_param)
 
-    if @contact.valid?
+    if @contact.save
       ContactsMailer.with(
-        name: @contact.name,
-        email: @contact.email,
-        phone: @contact.phone,
-        message: @contact.message
+        contact: @contact
       ).form_submission.deliver_now
     end
 
