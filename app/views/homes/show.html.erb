@@ -2,9 +2,9 @@
 <div class="lg:grid lg:grid-cols-7">
   <div>
     <div class="flex flex-col left-menu text-center lg:text-left" data-controller="left-menu">
-      <%= link_to 'Welcome', home_path('welcome'), class: add_focused_style_to_left_menu('welcome', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Private HNS', home_path('private_nhs'), class: add_focused_style_to_left_menu('private_nhs', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Emergency', home_path('emergency'), class: add_focused_style_to_left_menu('emergency', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Welcome', home_path('welcome'), class: add_focused_style_to_left_menu('welcome', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Private HNS', home_path('private_nhs'), class: add_focused_style_to_left_menu('private_nhs', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Emergency', home_path('emergency'), class: add_focused_style_to_left_menu('emergency', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
     </div>
   </div>
   <div class="col-span-4 p-4">

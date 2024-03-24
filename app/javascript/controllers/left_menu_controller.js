@@ -1,16 +1,23 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  connect() {
-    this.element.dataset.action = "click->left-menu#focusLeftMenu"
-  }
+  static targets = ['menu', 'subMenu']
 
-  focusLeftMenu(event) {
-    const links = event.currentTarget.querySelectorAll('a');
-    links.forEach((link) => {
-      link.classList.remove('left-menu-focused')
+  focusMenu(event) {
+    this.menuTargets.forEach((menu) => {
+      menu.classList.remove('left-menu-focused')
     })
 
-    event.target.classList.add('left-menu-focused')
+    this.subMenuTargets.forEach((subMenu) => {
+      const revealSubMenu = event.currentTarget.contains(subMenu)
+
+      if (revealSubMenu) {
+        subMenu.classList.remove('hidden')
+      } else {
+        subMenu.classList.add('hidden')
+      }
+    })
+
+    event.currentTarget.classList.add('left-menu-focused')
   }
 }

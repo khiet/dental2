@@ -68,6 +68,6 @@
     @apply hover:product-left-menu-sublist-a-border;
   }
   .product-left-menu-sublist-a-border {
-    @apply border-b-4 border-sunbury-light;
+    @apply border-b-2 border-sunbury-light;
   }
 }

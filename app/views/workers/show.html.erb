@@ -2,13 +2,13 @@
 <div class="lg:grid lg:grid-cols-7">
   <div>
     <div class="flex flex-col left-menu text-center lg:text-left" data-controller="left-menu">
-      <%= link_to 'About Us', workers_path, class: add_focused_style_to_left_menu('about_us', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Practice Managers', worker_path('practice_manager'), class: add_focused_style_to_left_menu('practice_manager', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Dentists', worker_path('dentist'), class: add_focused_style_to_left_menu('dentist', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Hygienists', worker_path('hygienist'), class: add_focused_style_to_left_menu('hygienist', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Nurses', worker_path('nurse'), class: add_focused_style_to_left_menu('nurse', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Doctors', worker_path('doctor'), class: add_focused_style_to_left_menu('doctor', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Receptionists', worker_path('receptionist'), class: add_focused_style_to_left_menu('receptionist', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'About Us', workers_path, class: add_focused_style_to_left_menu('about_us', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Practice Managers', worker_path('practice_manager'), class: add_focused_style_to_left_menu('practice_manager', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Dentists', worker_path('dentist'), class: add_focused_style_to_left_menu('dentist', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Hygienists', worker_path('hygienist'), class: add_focused_style_to_left_menu('hygienist', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Nurses', worker_path('nurse'), class: add_focused_style_to_left_menu('nurse', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Doctors', worker_path('doctor'), class: add_focused_style_to_left_menu('doctor', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Receptionists', worker_path('receptionist'), class: add_focused_style_to_left_menu('receptionist', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
     </div>
   </div>
   <div class="col-span-4 p-4">

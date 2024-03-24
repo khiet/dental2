@@ -2,12 +2,12 @@
 <div class="lg:grid lg:grid-cols-7">
   <div>
     <div class="flex flex-col left-menu text-center lg:text-left" data-controller="left-menu">
-      <%= link_to 'Advice', advices_path, class: add_focused_style_to_left_menu('advice', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Medical History', advice_path('medical_history'), class: add_focused_style_to_left_menu('medical_history', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Brushing', advice_path('brushing'), class: add_focused_style_to_left_menu('brushing', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Extraction', advice_path('extraction'), class: add_focused_style_to_left_menu('extraction', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Sensitivity', advice_path('sensitivity'), class: add_focused_style_to_left_menu('sensitivity', @partial), data: { turbo_frame: :tf_content } %>
-      <%= link_to 'Denture', advice_path('denture'), class: add_focused_style_to_left_menu('denture', @partial), data: { turbo_frame: :tf_content } %>
+      <%= link_to 'Advice', advices_path, class: add_focused_style_to_left_menu('advice', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Medical History', advice_path('medical_history'), class: add_focused_style_to_left_menu('medical_history', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Brushing', advice_path('brushing'), class: add_focused_style_to_left_menu('brushing', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Extraction', advice_path('extraction'), class: add_focused_style_to_left_menu('extraction', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Sensitivity', advice_path('sensitivity'), class: add_focused_style_to_left_menu('sensitivity', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
+      <%= link_to 'Denture', advice_path('denture'), class: add_focused_style_to_left_menu('denture', @partial), data: { turbo_frame: :tf_content, left_menu_target: :menu, action: "left-menu#focusMenu" } %>
     </div>
   </div>
   <div class="col-span-4 p-4">

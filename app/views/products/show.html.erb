@@ -1,12 +1,14 @@
 <%= image_tag "sign_product.png", class: 'min-w-full' %>
 <div class="lg:grid lg:grid-cols-7">
   <div>
-    <div class="flex flex-col left-menu text-center lg:text-left">
+    <div class="flex flex-col left-menu text-center lg:text-left" data-controller="left-menu">
       <ul>
-        <li class="js-product-left-menu <%= add_focused_style_to_left_menu('what_we_do', @partial) %>"><%= link_to 'What We Do', products_path, class: 'block', data: { turbo_frame: :tf_content } %></li>
-        <li class="js-product-left-menu <%= add_focused_style_to_left_menu('preventative_treatment', @partial) %>">
+        <li class="<%= add_focused_style_to_left_menu('what_we_do', @partial) %>" data-left-menu-target="menu" data-action="click->left-menu#focusMenu">
+          <%= link_to 'What We Do', products_path, class: 'block', data: { turbo_frame: :tf_content } %>
+        </li>
+        <li class="<%= add_focused_style_to_left_menu('preventative_treatment', @partial) %>" data-left-menu-target="menu" data-action="click->left-menu#focusMenu">
           <%= link_to "Preventative Treatment", product_path('preventative_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
-          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-center lg:text-right">
+          <ul class="product-left-menu-sublist hidden text-center lg:text-right" data-left-menu-target="subMenu" >
             <li><%= link_to "Examination", product_path('examination'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "X-Rays", product_path('x_ray'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "Treatment Planning", product_path('treatment_planning'), class: 'block', data: { turbo_frame: :tf_content } %></li>
@@ -14,9 +16,9 @@
             <li><%= link_to "Gold Fillings", product_path('gold_filling'), class: 'block', data: { turbo_frame: :tf_content } %></li>
           </ul>
         </li>
-        <li class="js-product-left-menu <%= add_focused_style_to_left_menu('cosmetic_treatment', @partial) %>">
+        <li class="<%= add_focused_style_to_left_menu('cosmetic_treatment', @partial) %>" data-left-menu-target="menu" data-action="click->left-menu#focusMenu">
           <%= link_to "Cosmetic Treatment", product_path('cosmetic_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
-          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-center lg:text-right">
+          <ul class="product-left-menu-sublist hidden text-center lg:text-right" data-left-menu-target="subMenu">
             <li><%= link_to "White fillings", product_path('white_filling'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "Tooth whitening", product_path('tooth_whitening'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "Veneers", product_path('veneer'), class: 'block', data: { turbo_frame: :tf_content } %></li>
@@ -24,16 +26,16 @@
             <li><%= link_to "Invisalign", product_path('invisalign'), class: 'block', data: { turbo_frame: :tf_content } %></li>
           </ul>
         </li>
-        <li class="js-product-left-menu" <%= add_focused_style_to_left_menu('gum_treatment', @partial) %>>
+        <li class="<%= add_focused_style_to_left_menu('gum_treatment', @partial) %>" data-left-menu-target="menu" data-action="click->left-menu#focusMenu">
           <%= link_to "Gum Treatment", product_path('gum_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
-          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-center lg:text-right">
+          <ul class="product-left-menu-sublist hidden text-center lg:text-right" data-left-menu-target="subMenu">
             <li><%= link_to "Hygiene", product_path('hygiene'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "Periodontal", product_path('periodontal'), class: 'block', data: { turbo_frame: :tf_content } %></li>
           </ul>
         </li>
-        <li class="js-product-left-menu <%= add_focused_style_to_left_menu('other_treatment', @partial) %>">
+        <li class="<%= add_focused_style_to_left_menu('other_treatment', @partial) %>" data-left-menu-target="menu" data-action="click->left-menu#focusMenu">
           <%= link_to "Other Treatment", product_path('other_treatment'), class: 'block', data: { turbo_frame: :tf_content } %>
-          <ul class="js-product-left-menu-sublist product-left-menu-sublist hidden text-center lg:text-right">
+          <ul class="product-left-menu-sublist hidden text-center lg:text-right" data-left-menu-target="subMenu">
             <li><%= link_to "Root Treatment", product_path('root_treatment'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "Extractions", product_path('extraction'), class: 'block', data: { turbo_frame: :tf_content } %></li>
             <li><%= link_to "Dentures", product_path('denture'), class: 'block', data: { turbo_frame: :tf_content } %></li>
@@ -41,7 +43,9 @@
             <li><%= link_to "Orthodontics", product_path('orthodonic'), class: 'block', data: { turbo_frame: :tf_content } %></li>
           </ul>
         </li>
-        <li class="js-product-left-menu <%= add_focused_style_to_left_menu('price_list', @partial) %>"><%= link_to "Price List", product_path('price_list'), class: 'block', data: { turbo_frame: :tf_content } %></li>
+        <li class="<%= add_focused_style_to_left_menu('price_list', @partial) %>" data-left-menu-target="menu" data-action="click->left-menu#focusMenu">
+          <%= link_to "Price List", product_path('price_list'), class: 'block', data: { turbo_frame: :tf_content } %>
+        </li>
       </ul>
     </div>
   </div>
