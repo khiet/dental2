@@ -11,9 +11,9 @@
     <h2>Welcome to the Sunbury Dental Practice</h2>
 
     <div class="mt-4 content">
-      <turbo-frame id="tf_content">
+      <%= turbo_frame_tag :tf_content do %>
         <%= render partial: @partial %>
-      </turbo-frame>
+      <% end %>
     </div>
   </div>
   <div class="col-span-2 hidden lg:block">
@@ -28,9 +28,9 @@
     <h4>Make an appointment by contacting us today</h4>
 
     <div class="mt-4">
-      <turbo-frame id="tf_contact_form">
+      <%= turbo_frame_tag :tf_contact_form do %>
         <%= render partial: 'shared/contact_form', locals: { contact: @contact } %>
-      </turbo-frame>
+      <% end %>
     </div>
   </div>
   <div class="col-span-2">

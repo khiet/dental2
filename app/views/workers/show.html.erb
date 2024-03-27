@@ -15,9 +15,9 @@
     <h2>The Sunbury Dental Team</h2>
 
     <div class="mt-4 content">
-      <turbo-frame id="tf_content">
+      <%= turbo_frame_tag :tf_content do %>
         <%= render partial: @partial %>
-      </turbo-frame>
+      <% end %>
     </div>
   </div>
   <div class="col-span-2 hidden lg:block">
